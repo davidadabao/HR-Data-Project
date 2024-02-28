@@ -2,7 +2,7 @@
 
 This project delves extensively into data analysis utilizing SQL and Power BI to reveal valuable human resource insights that can significantly enhance the company. Presenting visually appealing dashboards that provide essential HR metrics such as employee turnover, diversity, recruitment effectiveness, and performance evaluations. These tools assist HR professionals in making informed decisions and strategic workforce planning.
 
-## Data Source:
+## Data Cleaning & Analysis Procedure
 The data contains 23,000 employee record from year 2000 - 2020.
 - Data import (MS Excel) into MS SQL Server & inspection
 - Handled missing values
@@ -10,7 +10,8 @@ The data contains 23,000 employee record from year 2000 - 2020.
 - Ensured all data types in each column
 - Data cleaning and analysis
   
-## Data Cleaning & Analysis:
+## Power BI Visualisation
+
 The following procedure was executed for data cleaning in Microsoft SQL 2022.
 
 ### Data Source
