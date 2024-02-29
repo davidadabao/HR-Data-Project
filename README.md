@@ -4,6 +4,8 @@ This project delves extensively into data analysis utilizing SQL and Power BI to
 
 ## Data Cleaning & Analysis Procedure
 The data contains 23,000 employee record from year 2000 - 2020.
+The following procedure was executed for data cleaning in Microsoft SQL 2022.
+
 - Data import (MS Excel) into MS SQL Server & inspection
 - Handled missing values
 - Checked for missing values
@@ -11,11 +13,12 @@ The data contains 23,000 employee record from year 2000 - 2020.
 - Data cleaning and analysis
   
 ## Power BI Visualisation
+![Page-1](https://github.com/davidadabao/HR-Data-Project/blob/main/HR%20Data_Page_1.jpg)
 
-The following procedure was executed for data cleaning in Microsoft SQL 2022.
+![Page-2](https://github.com/davidadabao/HR-Data-Project/blob/main/HR%20Data_Page_2.jpg)
 
-### Data Source
-!
+## Data Cleaning & Analysis Procedure
+The data contains 23,000 employee record from year 2000 - 2020.
 
 ### 1) Create Database
 ``` SQL
