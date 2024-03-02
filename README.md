@@ -73,8 +73,7 @@ GROUP BY location
 #### 2) What's the race distribution in the company?
 
 ``` SQL
-SELECT race,
-count(*) AS count FROM hr_data
+SELECT race, count(*) AS count FROM hr_data
 WHERE new_termdate IS NULL 
 GROUP BY race
 ORDER BY count DESC
@@ -83,11 +82,7 @@ ORDER BY count DESC
 #### 3) How does gender vary across departments and job titles?
 
 ``` SQL
-SELECT 
-department,
-gender,
-count(gender) AS count
-FROM hr_data
+SELECT department, gender, count(gender) AS count FROM hr_data
 WHERE new_termdate IS NULL
 GROUP BY department, gender,
 ORDER BY department, gender ASC
@@ -96,10 +91,7 @@ ORDER BY department, gender ASC
 
 ``` SQL
 SELECT 
-department, jobtitle,
-gender,
-count(gender) AS count
-FROM hr_data
+department, jobtitle, gender, count(gender) AS count FROM hr_data
 WHERE new_termdate IS NULL
 GROUP BY department, jobtitle, gender
 ORDER BY department, jobtitle, gender ASC
@@ -108,8 +100,7 @@ ORDER BY department, jobtitle, gender ASC
 #### 4) What's the age distribution in the company?
 
 ``` SQL
-SELECT
-MIN(age) AS youngest,
+SELECT MIN(age) AS youngest,
 MAX(age) AS OLDEST
 FROM hr_data
 ```
@@ -136,9 +127,7 @@ ORDER BY age_group
 
 ``` SQL
 SELECT
- gender,
- COUNT(gender) AS count
-FROM hr_data
+ gender, COUNT(gender) AS count FROM hr_data
 WHERE new_termdate IS NULL
 GROUP BY gender
 ORDER BY gender ASC
@@ -168,9 +157,7 @@ ORDER BY age_group, gender
 #### 7) What's the distribution of employees across different states?
 
 ``` SQL
-SELECT location_state,
-count(*) AS count
-FROM hr_data
+SELECT location_state, count(*) AS count FROM hr_data
 WHERE new_termdate IS NULL
 GROUP BY location_state
 ORDER BY count DESC
