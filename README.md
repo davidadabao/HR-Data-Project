@@ -50,7 +50,109 @@ The data contains 23,000 employee record from year 2000 - 2020.
 
 ### 1. Create Database
 ``` SQL
-CREATE DATABASE hr;
+CREATE DATABASE hr
+```
+### 2. Import Data to SQL Server
+- Use import wizard to import HR Data.csv to hr table.
+- Inspect data types before importing into MS SQL Server.
+
+``` SQL
+SELECT * FROM hr_data
+```
+## QUESTIONS TO GET FROM THE DATA
+
+#### 1) How many employees work remotely for each department?
+
+``` SQL
+SELECT location,
+count(*) as count FROM hr_data
+WHERE new_termdate IS NULL
+GROUP BY location
+```
+
+#### 2) What's the race distribution in the company?
+
+``` SQL
+SELECT race,
+count(*) AS count FROM hr_data
+WHERE new_termdate IS NULL 
+GROUP BY race
+ORDER BY count DESC
+```
+
+#### 3) How does gender vary across departments and job titles?
+
+``` SQL
+SELECT 
+department,
+gender,
+count(gender) AS count
+FROM hr_data
+WHERE new_termdate IS NULL
+GROUP BY department, gender,
+ORDER BY department, gender ASC
+```
+- job titles
+
+``` SQL
+SELECT 
+department, jobtitle,
+gender,
+count(gender) AS count
+FROM hr_data
+WHERE new_termdate IS NULL
+GROUP BY department, jobtitle, gender
+ORDER BY department, jobtitle, gender ASC
+```
+
+#### 4) What's the age distribution in the company?
+
+``` SQL
+SELECT
+MIN(age) AS youngest,
+MAX(age) AS OLDEST
+FROM hr_data
+```
+
+#### 5) What's the gender breakdown in the company?
+
+
+
+
+
+
+
+#### 6) What's the age distribution by gender in the company?
+
+
+
+
+
+
+
+
+#### 7) What's the distribution of employees across different states?
+
+``` SQL
+SELECT location_state,
+count(*) AS count
+FROM hr_data
+WHERE new_termdate IS NULL
+GROUP BY location_state
+ORDER BY count DESC
+```
+
+
+#### 10) How are job titles distributed in the company?
+
+``` SQL
+SELECT 
+ jobtitle,
+ count(*) AS count
+ FROM hr_data
+ WHERE new_termdate IS NULL
+ GROUP BY jobtitle
+ ORDER BY count DESC;
 ```
 
 
