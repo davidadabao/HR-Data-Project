@@ -46,7 +46,9 @@ The data contains 23,000 employee record from year 2000 - 2020.
 6)	Male and female employees from the age of 50 and above have the highest difference of 389, followed by those between 41 and 50 with a difference of 300. Next is age between 31 and 30 with a difference of 197, followed by ages between 22 and 30 with a difference of 13.
 7)	Most employees are in Ohio (14,788) followed distantly by Pennsylvania (930) and Illinois (730), Indiana (572), Michigan (569), Kentucky (375) and Wisconsin (321).
 
-### 1) Create Database
+## SQL Command lines
+
+### 1. Create Database
 ``` SQL
 CREATE DATABASE hr;
 ```
