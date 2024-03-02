@@ -92,7 +92,7 @@ WHERE new_termdate IS NULL
 GROUP BY department, gender,
 ORDER BY department, gender ASC
 ```
-- job titles
+- Job Titles
 
 ``` SQL
 SELECT 
@@ -113,23 +113,57 @@ MIN(age) AS youngest,
 MAX(age) AS OLDEST
 FROM hr_data
 ```
+- Age group count
+
+``` SQL
+SELECT age_group, count(*) AS count
+FROM
+(SELECT 
+ CASE
+  WHEN age <= 21 AND age <= 30 THEN '21 to 30'
+  WHEN age <= 31 AND age <= 40 THEN '31 to 40'
+  WHEN age <= 41 AND age <= 50 THEN '41 to 50'
+  ELSE '50+'
+  END AS age_group
+ FROM hr_data
+ WHERE new_termdate IS NULL
+ ) AS subquery
+GROUP BY age_group
+ORDER BY age_group
+```
 
 #### 5) What's the gender breakdown in the company?
 
-
-
-
-
-
+``` SQL
+SELECT
+ gender,
+ COUNT(gender) AS count
+FROM hr_data
+WHERE new_termdate IS NULL
+GROUP BY gender
+ORDER BY gender ASC
+```
 
 #### 6) What's the age distribution by gender in the company?
 
-
-
-
-
-
-
+``` SQL
+SELECT age_group, gender,
+count(*) AS count
+FROM
+(SELECT 
+ CASE
+  WHEN age <= 21 AND age <= 30 THEN '21 to 30'
+  WHEN age <= 31 AND age <= 40 THEN '31 to 40'
+  WHEN age <= 41 AND age <= 50 THEN '41 to 50'
+  ELSE '50+'
+  END AS age_group,
+  gender
+ FROM hr_data
+ WHERE new_termdate IS NULL
+ ) AS subquery
+GROUP BY age_group, gender
+ORDER BY age_group, gender
+```
 
 #### 7) What's the distribution of employees across different states?
 
@@ -141,18 +175,3 @@ WHERE new_termdate IS NULL
 GROUP BY location_state
 ORDER BY count DESC
 ```
-
-
-#### 10) How are job titles distributed in the company?
-
-``` SQL
-SELECT 
- jobtitle,
- count(*) AS count
- FROM hr_data
- WHERE new_termdate IS NULL
- GROUP BY jobtitle
- ORDER BY count DESC;
-```
-
-
